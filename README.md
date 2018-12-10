@@ -1,3 +1,15 @@
+# My personal website made from "Hello-world" gatsby js starter
+
+It's a quite simple blog using markdown files as posts.
+List of the plugins that i have used : 
+  * gatsby-plugin-typography
+  * gatsby-source-filesystem
+  * gatsby-plugin-manifest
+  * gatsby-plugin-react-helmet
+  * gatsby-plugin-sass
+  * gatsby-transformer-remark
+  * gatsby-plugin-offline
+
 # gatsby-starter-hello-world
 Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site.
 
