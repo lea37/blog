@@ -1,6 +1,17 @@
 module.exports = {
     siteMetadata: {
-        title: `My first gatsby blog !`
+        title: `Lea Tortay`,
+        description: `Frontend developper`,
+        menuLinks: [
+            {
+                name:'blog',
+                link:'/blog'
+            },
+            {
+                name:'ressources',
+                link:'/ressources'
+            }
+        ]
     },
     plugins: [
         {
@@ -13,14 +24,14 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,      
             options: {        
                 name: `blog`,        
-                path: `${__dirname}/src/posts/blog`,      
+                path: `${__dirname}/content/blog`,      
             },    
         },
         {      
             resolve: `gatsby-source-filesystem`,      
             options: {        
                 name: `ressources`,        
-                path: `${__dirname}/src/posts/ressources`,      
+                path: `${__dirname}/content/ressources`,      
             },    
         },
         {
@@ -35,6 +46,14 @@ module.exports = {
                 icon: "src/images/icon.png", // This path is relative to the root of the site.
             },
         },
+        {
+            resolve: "gatsby-remark-external-links",
+            options: {
+                target: "_self",
+                rel: "nofollow"
+            }
+        },
+        `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sass`,
         `gatsby-transformer-remark`,

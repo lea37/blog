@@ -18,8 +18,14 @@ export default ({ data }) => {
                         <h3>
                             {node.childMarkdownRemark.frontmatter.title}{" "}<span> — {node.childMarkdownRemark.frontmatter.date}</span>
                         </h3>
-                        <p>{node.childMarkdownRemark.excerpt}</p>
                     </Link>
+                    <a href={node.childMarkdownRemark.frontmatter.link}>{node.childMarkdownRemark.frontmatter.title}</a>
+                        {node.childMarkdownRemark.frontmatter.tags.map((tag, index) => {
+                            return (
+                                <span key={index} className="tag"><Link to={`/tags/${tag}`}>{tag}</Link></span>
+                            )
+                        })}
+                        <p>{node.childMarkdownRemark.excerpt}</p>
                 </div>
             ))}
         </div>

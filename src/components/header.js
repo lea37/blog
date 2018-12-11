@@ -1,24 +1,47 @@
 import React from "react"
-import { Link } from "gatsby"
+import {StaticQuery, Link, graphql} from "gatsby"
+import styled from "styled-components"
 
+const Head = ({data}) => {
+  const title = data.site.siteMetadata.title
+  const description = data.site.siteMetadata.description
+  const menuLinks = data.site.siteMetadata.menuLinks
 
-const ListLink = props => (
-    <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-        <Link to={props.to}>{props.children}</Link>
-    </li>
-)
+  return (
+    <div>
+        <Link to="/"><h1>{title}</h1></Link>
+        <p>{description}</p>
+        <nav>
+          {
+            menuLinks.map(item =>
+              <li key={item.name}><Link to={item.link}>{item.name}</Link></li>
+            )
+          }
+        </nav>
+    </div>
+  )
+}
 
-export default ({ children }) => (
-  <div>
-    <header style={{ marginBottom: `1.5rem` }}>
-        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-            <h3 style={{ display: `inline` }}>MySweetSite</h3>
-        </Link>
-        <ul style={{ listStyle: `none`, float: `right` }}>
-            <ListLink to="/blog/">Blog</ListLink>
-            <ListLink to="/ressources/">Ressources</ListLink>
-        </ul>
-    </header>
-    {children}
-  </div>
-)
+const Header = () => {
+  return(
+    <StaticQuery 
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+              description
+              menuLinks {
+                name
+                link
+              }
+            }
+          }
+        }
+      `}
+      render={data => <Head data={data}/>}
+    />
+  )
+}
+
+export default Header
