@@ -2,7 +2,7 @@
 title: "Caca"
 date: "2017-08-10"
 path: "/caca"
-tags: ["animals", "Chicago", "zoos"]
+tags: ["css", "svg"]
 link: https://www.sarasoueidan.com/
 ---
 Pandas are really sweet.

@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `Lea Tortay`,
-        description: `Frontend developper`,
+        description: `Freelance Front-End Web Developer - Paris`,
         menuLinks: [
             {
                 name:'blog',
@@ -37,8 +37,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: "GatsbyJS",
-                short_name: "GatsbyJS",
+                name: "Lea Tortay",
+                short_name: "LeaT",
                 start_url: "/",
                 background_color: "#6b37bf",
                 theme_color: "#6b37bf",
@@ -52,6 +52,21 @@ module.exports = {
                 target: "_self",
                 rel: "nofollow"
             }
+        },
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Montserrat`,
+                        variants: [`400`, `700`],
+                    },
+                    {
+                        family: `Domine`,
+                        variants: [`400`, `700`]
+                    },
+                ],
+            },
         },
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,

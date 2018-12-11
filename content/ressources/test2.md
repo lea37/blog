@@ -2,7 +2,7 @@
 title: "Toto"
 date: "2018-01-12"
 path: "/toto"
-tags: ["animals", "Chicago", "zoos"]
+tags: ["css", "chicago", "zoos"]
 ---
 
 Pandas are really sweet.

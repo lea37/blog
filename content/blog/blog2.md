@@ -3,7 +3,7 @@ title: "Sweet Potatoes"
 date: "2018-01-12"
 ---
 
-Pandas are really sweet.
+Martine à la piscine.
 
 Here's a video of a panda eating sweets.
 
